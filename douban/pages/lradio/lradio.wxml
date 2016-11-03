@@ -1,0 +1,17 @@
+<view class="container">
+    <include src="../ncomn/nheader.wxml"/>
+    <view class="content">
+        <view class="top">
+            <navigator class="in-block login">
+                <image mode="scaleToFill" src="https://img1.doubanio.com/icon/user_normal.jpg" />
+                <text class="in-block text">{{loginFlag}}</text>
+            </navigator>
+            <view class="in-block photo">
+                <image mode="scaleToFill" src="https://img3.doubanio.com/f/talion/68ab505eac3e7551815c06a5e03a26a6373bb46c/pics/card/ic_status_camera.svg" />
+            </view>
+            <view class="in-block edit">
+                <image mode="scaleToFill" src="https://img3.doubanio.com/f/talion/d9ba3fa414721588284167944c70664e685993b1/pics/card/ic_status_pen.svg" />
+            </view>
+        </view>
+    </view>
+</view>

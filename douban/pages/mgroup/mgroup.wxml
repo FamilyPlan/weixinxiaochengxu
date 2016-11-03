@@ -1,0 +1,147 @@
+<import src="../ncomn/template.wxml"/>
+<view class="container">
+    <view class="top">
+        <view class="top-search">
+            <form class="search">
+                <input type="search" name="q" placeholder="活动名称、地点、介绍、舞台剧" />
+                <view>
+                    <icon type="search" size="11"/>
+                </view>
+            </form>
+        </view>
+        <view class="top-select">
+            <navigator url="/">
+                <image mode="scaleToFill" src="https://img3.doubanio.com/f/shire/b6b5dd91a7fac86a3980593c2c477b5bdfd2c7d6/pics/nav/lg_location_a11_1.png"/>
+            </navigator>
+            <button>{{localtion}}</button>
+        </view>
+        <view class="top-kind">
+            <view>近期活动</view>
+            <view>主办方</view>
+            <view>舞台剧</view>
+        </view>
+    </view>
+    <view class="content">
+        <block wx:if="{{localtion=='World'}}">
+            <view class="area-kind">中国大陆</view>
+            <view class="area-list">
+                <block wx:for="{{china}}">
+                    <view bindtap="navLoc" data-id="{{item.id}}" data-uid="{{item.uid}}" data-name="{{item.name}}">
+                        <text class="name">{{item.name}}</text>
+                    </view>
+                </block>
+            </view>
+        </block>
+        <block wx:else>
+            <view class="section">
+                <view class="kind-title">热门活动</view>
+                <view class="cont">
+                     <scroll-view scroll-x="true" class="scroll-view_H">
+                        <block wx:for="{{hotAct}}">
+                            <navigator id="{{item.id}}" class="scroll-view-item" url="{{item.alt}}">
+                                 <view class="item-img">
+                                    <image  mode="scaleToFill"  src="{{item.image}}"></image>
+                                </view>
+                                <view class="item-text">{{item.title}}</view>
+                            </navigator>
+                        </block>
+                     </scroll-view>    
+                </view> 
+            </view>
+            <view class="section kind-view">
+                <view class="kind-item">
+                    <view class="item-title">音乐<span>>></span></view>
+                    <view class="item-cont">
+                        <block wx:for="{{musicList}}">
+                            <view>{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+                <view class="kind-item">
+                    <view class="item-title">戏剧<span>>></span></view>
+                    <view class="item-cont">
+                        <block wx:for="{{dramaList}}">
+                            <view>{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+                <view class="kind-item">
+                    <view class="item-title">聚会<span>>></span></view>
+                    <view class="item-cont">
+                        <block wx:for="{{partyList}}">
+                            <view>{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+                <view class="kind-item">
+                    <view class="item-title">电影<span>>></span></view>
+                    <view class="item-cont">
+                        <block wx:for="{{movieList}}">
+                            <view>{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+                <view class="kind-item">
+                    <view class="item-title">其他<span>>></span></view>
+                    <view class="item-cont">
+                        <block wx:for="{{othersList}}">
+                            <view>{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="section">
+                <view class="kind-nav">
+                    <view class="nav-kind">音乐</view>
+                    <block wx:for="{{musicList}}">
+                        <view class="nav-detail">{{item}}</view>
+                    </block>
+                </view>
+                <view class="kind-detail">
+                    <block wx:for="{{musicCont}}">
+                        <template is="vertical-list" data="{{item}}"/>
+                    </block>
+                </view>
+            </view>
+            <view class="section">
+                <view class="kind-nav">
+                    <view class="nav-kind">戏剧</view>
+                    <block wx:for="{{dramaList}}">
+                        <view class="nav-detail">{{item}}</view>
+                    </block>
+                </view>
+                <view class="kind-detail">
+                    <block wx:for="{{dramaCont}}">
+                        <template is="vertical-list" data="{{item}}"/>
+                    </block>
+                </view>
+            </view>
+            <view class="section">
+                <view class="kind-nav">
+                    <view class="nav-kind">聚会</view>
+                    <block wx:for="{{partyList}}">
+                        <view class="nav-detail">{{item}}</view>
+                    </block>
+                </view>
+                <view class="kind-detail">
+                    <block wx:for="{{partyCont}}">
+                        <template is="vertical-list" data="{{item}}"/>
+                    </block>
+                </view>
+            </view>
+             <view class="section">
+                <view class="kind-nav">
+                    <view class="nav-kind">电影</view>
+                    <block wx:for="{{movieList}}">
+                        <view class="nav-detail">{{item}}</view>
+                    </block>
+                </view>
+                <view class="kind-detail">
+                    <block wx:for="{{movieCont}}">
+                        <template is="vertical-list" data="{{item}}"/>
+                    </block>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>

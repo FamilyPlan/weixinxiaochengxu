@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/lradio/lradio",
+    "pages/mgroup/mgroup",
+    "pages/osearch/osearch",
+    "pages/pmvdetail/pmvdetail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "000",
+    "navigationBarTitleText": "豆瓣",
+    "navigationBarTextStyle":"#fff"
+  },"tabBar":{
+      "color":"#464547",
+      "selectdColor":"#3cc51f",
+      "borderStyle":"#888",
+      "backgroundColor":"#ffffff",
+      "list": [
+      {
+        "pagePath":"pages/index/index",
+        "text":"电影"
+      },
+      {
+        "pagePath":"pages/lradio/lradio",
+        "text":"广播"
+      },
+      {
+        "pagePath":"pages/mgroup/mgroup",
+        "text":"同城"
+      }]
+    },"networkTimeout": {
+      "request": 10000,
+      "connectSocket": 10000,
+      "uploadFile": 10000,
+      "downloadFile": 10000
+    },"debug": true
+}

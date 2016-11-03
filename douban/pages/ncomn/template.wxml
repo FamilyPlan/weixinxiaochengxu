@@ -1,0 +1,53 @@
+<template name="scroll-H-list">
+  <navigator id="{{item.id}}" class="scroll-view-item" url="{{item.alt}}">
+              <view class="item-img">
+                <image  mode="scaleToFill"  src="{{item.images.large}}"></image>
+              </view>
+              <view class="item-text">{{item.title}}</view>
+              <view class="item-score">
+                    <block wx:if="{{item.rating.average==10}}">
+                      <text class="win"></text><text class="win"></text> <text class="win"></text> <text class="win"></text> <text class="win"></text>
+                      <text class="score">{{item.rating.average}}</text>
+                    </block>
+                    <block wx:elif="{{item.rating.average<10 && item.rating.average>=8}}">
+                      <text class="win"></text><text class="win"></text> <text class="win"></text> <text class="win"></text> <text class="grey"></text>
+                      <text class="score">{{item.rating.average}}</text>
+                    </block>
+                    <block wx:elif="{{item.rating.average<8 && item.rating.average>=6}}">
+                      <text class="win"></text><text class="win"></text> <text class="win"></text> <text class="grey"></text> <text class="grey"></text>
+                      <text class="score">{{item.rating.average}}</text>
+                    </block>
+                    <block wx:elif="{{item.rating.average<6 && item.rating.average>=4}}">
+                      <text class="win"></text><text class="win"></text> <text class="grey"></text> <text class="grey"></text> <text class="grey"></text>
+                      <text class="score">{{item.rating.average}}</text>
+                    </block>
+                    <block wx:elif="{{item.rating.average<4 && item.rating.average>=2}}">
+                      <text class="win"></text><text class="grey"></text> <text class="grey"></text> <text class="grey"></text> <text class="grey"></text>
+                      <text class="score">{{item.rating.average}}</text>
+                    </block>
+                    <block wx:elif="{{item.rating.average<2 && item.rating.average>0 }}">
+                      <text class="grey"></text><text class="grey"></text> <text class="grey"></text> <text class="grey"></text> <text class="grey"></text>
+                      <text class="score">{{item.rating.average}}</text>
+                    </block>
+                    <block wx:else>
+                      <text style="font-size:12px;color:#aaa;text-align:center">暂无评分</text>
+                    </block>
+                    
+              </view>
+            </navigator>
+</template>
+<template name="vertical-list">
+  <view class="cont-wrapper">
+    <view data-id="{{item.id}}" data-subcategory-name='{{item.subcategory_name}}' data-url='{{item.alt}}'>
+      <view class="cont-img">
+        <image  mode="scaleToFill"  src="{{item.image}}"></image>
+      </view>
+      <view class="cont-text">
+        <view class="text-title">{{item.title}}</view>
+        <view class="text-time">{{item.time_str}}</view>
+        <view class="text-address">{{item.address}}</view>
+        <view class="text-watch">{{item.wisher_count+item.participant_count}}人关注</view>
+      </view>
+    </view>
+  </view>
+</template>

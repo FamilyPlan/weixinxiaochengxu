@@ -1,0 +1,13 @@
+<import src="../ncomn/template.wxml"/>
+<view class="container">
+    <include src="../ncomn/nheader.wxml"/>
+    <view class="content">
+        <view class="title">{{title}}</view>
+        <scroll-view scroll-y="true" class="scroll-view_V" bindscrolltolower="loadMore">
+            <block wx:for="{{cont}}">
+                <template is="scroll-H-list" data="{{item}}"/>
+            </block>
+        </scroll-view>
+        
+    </view>
+</view>

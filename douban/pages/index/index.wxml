@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<import src="../ncomn/template.wxml"/>
+<view class="container">
+  <include src="../ncomn/nheader.wxml"/>
+  <view class="content">
+    <view class="section">
+      <view class="kind">
+        <text>影院热映</text>
+        <text class="more" url="../pmvdetail/pmvdetail" data-url="in_theaters" data-cont="影院热映" bindtap="navToDatail">更多</text>
+      </view>
+      <view class="cont">
+        <scroll-view scroll-x="true" class="scroll-view_H">
+          <block wx:for="{{hotmv}}">
+            <template is="scroll-H-list" data="{{item}}"/>
+          </block>
+        </scroll-view>
+      </view> 
+    </view>
+    <view class="section">
+      <view class="kind">
+        <text>即将上映</text>
+        <text class="more" data-url="coming_soon" data-cont="即将上映" bindtap="navToDatail">更多</text>
+      </view>
+      <view class="cont">
+        <scroll-view scroll-x="true" class="scroll-view_H">
+          <block wx:for="{{commv}}">
+            <template is="scroll-H-list" data="{{item}}"/>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="kind">
+        <text>豆瓣TOP200</text>
+        <text class="more" data-url="top250" data-cont="经典电影" bindtap="navToDatail">更多</text>
+      </view>
+      <view class="cont">
+        <scroll-view scroll-x="true" class="scroll-view_H">
+          <block wx:for="{{topmv}}">
+            <template is="scroll-H-list" data="{{item}}"/>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="section" style="border-bottom:1px solid #eee">
+      <block wx:for="{{tags}}">
+        <view class="tag-list" data-url="{{item.url}}" data-cont="{{item.title}}" id="{{item.url}}" bindtap="navToDatail">
+          <text>{{item.name}}</text>
+          <text class="tag-icon"></text>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+
+
+

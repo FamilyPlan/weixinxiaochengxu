@@ -1,0 +1,18 @@
+<view class="container">
+    <view>
+        <view class="header">
+            <navigator bindtap="searchclose">关闭</navigator>
+        <form action="https://api.douban.com/v2/movie/search">
+            <input name="q" id="q" formType="submit" auto-focus  type="text" placeholder="电影、影人、影院、电视剧" />
+        </form>
+        </view>
+    </view>
+    <view class="section">
+        <block wx:for="{{types}}">
+            <navigator class="kind-list" url="{{item.url}}">
+                <view class="title" style="color:{{item.color}}">{{item.title}}</view>
+                <view class="cont">{{item.cont}}</view>
+            </navigator>
+        </block>
+    </view>
+</view>

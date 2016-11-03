@@ -1,0 +1,51 @@
+/**index.wxss**/
+.section{
+  margin-top: 10px;
+}
+.kind{
+  padding: 0 18px;
+  font-size: 16px;
+  color: #000;
+  height: 24px;
+  line-height: 24px;
+}
+.more{
+  float: right;
+  font-size: 14px;
+  color: #42bd56;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  display: inline-block;
+  width: 100px;
+  margin-right:10px;
+}
+.cont{
+  padding: 5px 45px 5px 18px;
+  overflow: hidden;
+}
+.tag-list{
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+  border-right:1px solid #eee;
+  border-top:1px solid #eee;
+  color: #42bd56;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+  padding:0 10px;
+}
+.tag-icon{
+  color: #ccc;
+  float: right;
+  font-weight: bold;
+  border-right:1px solid #ccc;
+  border-bottom:1px solid #ccc;
+  width: 8px;
+  height: 8px;
+  transform: rotate(-45deg);
+  margin-top: 12px;
+}
